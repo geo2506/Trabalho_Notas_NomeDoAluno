@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Notas - Controle de Alunos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Notas - Controle de Alunos</h1>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Cadastro de Aluno</h2>
+            <form id="formAluno">
+                <label for="nome">Nome do Aluno:</label>
+                <input type="text" id="nome" required>
+
+                <label for="nota1">Nota 1:</label>
+                <input type="number" id="nota1" required min="0" max="10">
+
+                <label for="nota2">Nota 2:</label>
+                <input type="number" id="nota2" required min="0" max="10">
+
+                <button type="submit">Adicionar Aluno</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Lista de Alunos</h2>
+            <table id="tabelaAlunos">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Nota 1</th>
+                        <th>Nota 2</th>
+                        <th>Média</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Os registros serão inseridos aqui -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
