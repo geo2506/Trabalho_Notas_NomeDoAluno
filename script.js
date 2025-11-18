@@ -3,6 +3,7 @@ const formAluno = document.getElementById('formAluno');
 const nomeInput = document.getElementById('nome');
 const nota1Input = document.getElementById('nota1');
 const nota2Input = document.getElementById('nota2');
+const nota3Input = document.getElementById('nota3');
 const tabelaAlunos = document.getElementById('tabelaAlunos').getElementsByTagName('tbody')[0];
 
 // Função para calcular a média
@@ -50,9 +51,9 @@ formAluno.addEventListener('submit', function(event) {
     event.preventDefault(); // Impede o envio do formulário
 
     const nome = nomeInput.value.trim();
-    const nota1 = nota1Input.value.trim();
-    const nota2 = nota2Input.value.trim();
-     const nota3 = nota2Input.value.trim();
+    const nota1 = nota1Input1.value.trim();
+    const nota2 = nota2Input2.value.trim();
+     const nota3 = notaInput3.value.trim();
 
 
     if (!nome || !nota1 || !nota2) {
