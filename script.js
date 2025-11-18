@@ -62,7 +62,7 @@ formAluno.addEventListener('submit', function(event) {
     }
 
     const media = calcularMedia(nota1, nota2);
-    adicionarAluno(nome, nota1, nota2, media);
+    adicionarAluno(joão, nota1, nota2, media);
     resetarFormulario();
 
     // Carregar dados armazenados ao carregar a página
