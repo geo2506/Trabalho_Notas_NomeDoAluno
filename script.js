@@ -7,12 +7,12 @@ const nota3Input = document.getElementById('nota3');
 const tabelaAlunos = document.getElementById('tabelaAlunos').getElementsByTagName('tbody')[0];
 
 // Função para calcular a média
-function calcularMedia(nota1, nota2) {
-    return (parseFloat(nota1) + parseFloat(nota2)) / 2;
+function calcularMedia(nota1, nota2, nota3) {
+    return (parseFloat(nota1) + parseFloat(nota2) + parseFloat(nota3)) / 3;
 }
 
 // Função para adicionar um aluno à tabela
-function adicionarAluno(nome, nota1, nota2, media) {
+function adicionarAluno(nome, nota1, nota2, nota3, media) {
     const tr = document.createElement('tr');
 
     const tdNome = document.createElement('td');
@@ -26,6 +26,10 @@ function adicionarAluno(nome, nota1, nota2, media) {
     const tdNota2 = document.createElement('td');
     tdNota2.textContent = nota2;
     tr.appendChild(tdNota2);
+
+    const tdNota3 = document.createElement('td');
+    tdNota2.textContent = nota3;
+    tr.appendChild(tdNota3);
 
     const tdMedia = document.createElement('td');
     tdMedia.textContent = media.toFixed(2);
@@ -44,6 +48,7 @@ function resetarFormulario() {
     nomeInput.value = '';
     nota1Input.value = '';
     nota2Input.value = '';
+    nota3Input.value = '';
 }
 
 // Evento do formulário para adicionar aluno
@@ -53,23 +58,23 @@ formAluno.addEventListener('submit', function(event) {
     const nome = nomeInput.value.trim();
     const nota1 = nota1Input1.value.trim();
     const nota2 = nota2Input2.value.trim();
-     const nota3 = notaInput3.value.trim();
+     const nota3 = nota3Input3.value.trim();
 
 
-    if (!nome || !nota1 || !nota2) {
+    if (!nome || !nota1 || !nota2 || !nota3) {
         alert("Todos os campos devem ser preenchidos!");
         return;
     }
 
-    const media = calcularMedia(nota1, nota2);
-    adicionarAluno(joão, nota1, nota2, media);
+    const media = calcularMedia(nota1, nota2, nota3);
+    adicionarAluno(nome, nota1, nota2, nota3, media);
     resetarFormulario();
 
     // Carregar dados armazenados ao carregar a página
 document.addEventListener('DOMContentLoaded', function() {
     const alunos = JSON.parse(localStorage.getItem('alunos')) || [];
     alunos.forEach(aluno => {
-        adicionarAluno(aluno.nome, aluno.nota1, aluno.nota2, aluno.media);
+        adicionarAluno(aluno.nome, aluno.nota1, aluno.nota2, aluno.nota3, aluno.media);
     });
 });
 
@@ -94,14 +99,15 @@ formAluno.addEventListener('submit', function(event) {
     const nome = nomeInput.value.trim();
     const nota1 = nota1Input.value.trim();
     const nota2 = nota2Input.value.trim();
+    const nota3 = nota3Input.value.trim();
 
-    if (!nome || !nota1 || !nota2) {
+    if (!nome || !nota1 || !nota2 || !nota3) {
         alert("Todos os campos devem ser preenchidos!");
         return;
     }
 
-    const media = calcularMedia(nota1, nota2);
-    adicionarAluno(nome, nota1, nota2, media);
+    const media = calcularMedia(nota1, nota2, nota3);
+    adicionarAluno(nome, nota1, nota2, nota3, media);
     salvarDadosNoLocalStorage();
     resetarFormulario();
 });
