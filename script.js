@@ -52,6 +52,8 @@ formAluno.addEventListener('submit', function(event) {
     const nome = nomeInput.value.trim();
     const nota1 = nota1Input.value.trim();
     const nota2 = nota2Input.value.trim();
+     const nota3 = nota2Input.value.trim();
+
 
     if (!nome || !nota1 || !nota2) {
         alert("Todos os campos devem ser preenchidos!");
